@@ -25,9 +25,12 @@ namespace Solution_16_11_2022.Helpers
             string result = "";
             for (int i = 0; i < noOfCharacters; i++)
             {
-                // check if the c is less than 65 or more than 122 and amend accordingly
                 // english characters, upper and lower
                 // numbers 0 - 9
+
+                // Step 1a. Find english upper letters min = 65, max = 90 
+                // Step 1b. Find english lower letters min = 97, max = 122
+                // Step 1c. Find number min = 49, max = 58 
                 result += ReturnEnglishLetterOrNumber(isLetterAndDigit);
             }
             return result;

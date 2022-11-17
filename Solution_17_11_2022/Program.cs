@@ -53,7 +53,7 @@ namespace Solution_17_11_2022
                 Console.WriteLine(product);
             }
 
-            char a = 'α';
+            char a = '0';
             int asciiA = Convert.ToInt16(a);
             int asciiA32 = Convert.ToInt32(a);
             //int asciiA64 = Convert.ToInt64(a); // why the heck this does not work????
