@@ -30,8 +30,37 @@ namespace Solution_16_11_2022.Helpers
 
                 // Step 1a. Find english upper letters min = 65, max = 90 
                 // Step 1b. Find english lower letters min = 97, max = 122
-                // Step 1c. Find number min = 49, max = 58 
-                result += ReturnEnglishLetterOrNumber(isLetterAndDigit);
+                // Step 1c. Find number min = 49, max = 58
+
+                // Step 2. If we need only letters the first letter needs to be capital (upper)
+                if(!isLetterAndDigit) // == false, only letters
+                {
+                    // produces letters with the first letter as capital
+                    if (i == 0)
+                    {
+                        result += ReturnARandomCharacterBetween(65, 91); // upper
+                    }
+                    else
+                    {
+                        result += ReturnARandomCharacterBetween(97, 123); // lower
+                    }
+                }
+                
+                // Step 3. If we need letters and numbers,
+                // Step 3a. first character needs to be a letter (upper or lower)
+                // Step 3b. second characters needs to be a letter (upper or lower)
+                // Step 3c. all the rest of the characters (except character 0 and 1) need to be numbers
+                else
+                {
+                    if(i == 0 || i == 1)
+                    {
+                        result += ReturnARandomCharacterBetween(65, 91);
+                    }
+                    else
+                    {
+                        result += ReturnARandomCharacterBetween(49, 59);
+                    }
+                }
             }
             return result;
         }
