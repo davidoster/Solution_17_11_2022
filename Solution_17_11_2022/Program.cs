@@ -47,12 +47,22 @@ namespace Solution_17_11_2022
             //{
             //    Console.WriteLine(products[i]);
             //}
-            Product[] arrayOfProducts = ProductManager.CreateProductsWithRandomData(1);
+            Product[] arrayOfProducts = ProductManager.CreateProductsWithRandomData(0);
             foreach (Product product in arrayOfProducts)
             {
                 Console.WriteLine(product);
             }
 
+            char a = 'α';
+            int asciiA = Convert.ToInt16(a);
+            int asciiA32 = Convert.ToInt32(a);
+            //int asciiA64 = Convert.ToInt64(a); // why the heck this does not work????
+
+            Console.WriteLine(a);
+            Console.WriteLine(asciiA);
+            
+            Console.WriteLine(Char.IsLetter(a));
+            
 
             Console.WriteLine("Press any key to continue....");
             Console.ReadKey();

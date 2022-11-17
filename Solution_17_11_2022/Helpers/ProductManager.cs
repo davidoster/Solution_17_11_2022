@@ -31,7 +31,12 @@ namespace Solution_16_11_2022.Helpers
             for(int i = 0; i < arrayOfProducts.Length; i++) 
             {
                 // Step 3. initialize this position of the array with random data
-                arrayOfProducts[i] = new Product(RandomGenerator.GenerateInteger(999999), RandomGenerator.GenerateString(5), RandomGenerator.GenerateString(12), RandomGenerator.GenerateDouble(1000), RandomGenerator.GenerateString(20, true));
+                arrayOfProducts[i] = new Product(
+                    RandomGenerator.GenerateInteger(999999), 
+                    RandomGenerator.GenerateString(5), 
+                    RandomGenerator.GenerateString(12), 
+                    RandomGenerator.GenerateDouble(1000), 
+                    RandomGenerator.GenerateString(20, true));
             }
             
             // Step 4. return the filled arrayOfProducts
