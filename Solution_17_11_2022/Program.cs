@@ -14,7 +14,7 @@ namespace Solution_17_11_2022
         {
             Product[] arrayOfProducts = new Product[4];
             arrayOfProducts = ProductManager.CreateProductsWithRandomData(2);
-            foreach (Product product in arrayOfProducts) //arrayOfProducts[0]
+            foreach (Product product in arrayOfProducts)
             {
                 Console.WriteLine(product);
             }
