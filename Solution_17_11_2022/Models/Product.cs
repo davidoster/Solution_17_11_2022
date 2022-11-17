@@ -54,7 +54,7 @@ namespace Solution_16_11_2022.Models
 
         public override string ToString()
         {
-            return $"_name: {_name}, Id: {Id}, Title: {Title}, Desc: {Description}, Price: {Price.ToString("0.###")}, SerialNo: {SerialNo}, IsActive: {IsActive}";
+            return $"Id: {Id}\tTitle: {Title}\tDesc: {Description}\tPrice: {Price.ToString("0.###")}\t\tSerialNo: {SerialNo}\tIsActive: {IsActive}";
         }
 
 
