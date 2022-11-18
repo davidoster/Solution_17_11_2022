@@ -11,18 +11,23 @@ namespace Solution_17_11_2022.Models
     internal class Employee : Human // : Human ----> inherits the Human properties and methods - Single inheritance classes
         // multiple inheritance interfaces
     {
-        public Employee(int id, string firstName, string lastName, 
-            string email, string mobile, DateTime dateOfBirth, double salary)
+        public double Salary { get; set; }
+        public Employee() //: base()
+        {
+            Email += " some more";
+        }
+
+        public Employee(int id)
         {
             Id = id;
-            FirstName = firstName;
-            LastName = lastName;
-            Email = email;
-            Mobile = mobile;
-            DateOfBirth = dateOfBirth;
+        }
+        public Employee(int id, string firstName, string lastName, 
+            string email, string mobile, DateTime dateOfBirth, double salary) 
+            : base(id,firstName,lastName,email,mobile,dateOfBirth)
+        {
+            Id += 5000;
             Salary = salary;
         }
-        public double Salary { get; set; }
 
         public override string ToString()
         {

@@ -18,9 +18,21 @@ namespace Solution_17_11_2022
             //CreateSomeProducts();
             //CreateCustomers();
 
+            // creates a new human object
+            Human human = new Human(0, "g", "p", "p@p", "6977", new DateTime(1,1,1));
+            Console.WriteLine(human);
+
+            // creates a new employee
             Employee employee = new Employee(0, "G", "P", "p@p", "6977", 
                 new DateTime(1,1,1), 200);
-            Console.WriteLine(employee);
+
+            // creates 40 employees
+            Employee[] employees = new Employee[1];
+            for(int i = 0; i < 1; i++)
+            {
+                employees[i] = new Employee();
+            }
+            Console.WriteLine(employees[0]);
 
             Console.WriteLine("Press any key to continue....");
             Console.ReadKey();
