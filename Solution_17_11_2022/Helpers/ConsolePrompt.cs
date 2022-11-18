@@ -8,12 +8,6 @@ namespace System
 {
     internal class ConsolePrompt
     {
-        public static string ClassName = "Koukou";
-        public void DummyMethod()
-        {
-            Console.WriteLine("You dummy!");
-        }
-
         // al the methods below are accessible via the name of the class
         // (and not from a class object of type ConsolePrompt)
         public static string GetPropertyAsString(string name)
@@ -32,6 +26,12 @@ namespace System
         {
             Console.WriteLine($"Please type the {name}: ");
             return double.Parse(Console.ReadLine());
+        }
+
+        public static DateTime GetPropertyAsDateTime(string name)
+        {
+            Console.WriteLine($"Please type the {name}: ");
+            return DateTime.Parse(Console.ReadLine());
         }
     }
 }

@@ -12,6 +12,14 @@ namespace Solution_17_11_2022
     {
         static void Main(string[] args)
         {
+            //CreateSomeProducts();
+           
+            Console.WriteLine("Press any key to continue....");
+            Console.ReadKey();
+        }
+
+        private static void CreateSomeProducts()
+        {
             Product[] arrayOfProducts = new Product[4];
             arrayOfProducts = ProductManager.CreateProductsWithRandomData(2);
             foreach (Product product in arrayOfProducts)
@@ -20,9 +28,17 @@ namespace Solution_17_11_2022
             }
 
             arrayOfProducts = ProductManager.CreateProductsFromUI(2);
+        }
+    }
 
-            Console.WriteLine("Press any key to continue....");
-            Console.ReadKey();
+    struct SomeStruct
+    {
+        public int Id;
+
+        
+        public SomeStruct(int id)
+        {
+            Id = id + 5;
         }
     }
 }

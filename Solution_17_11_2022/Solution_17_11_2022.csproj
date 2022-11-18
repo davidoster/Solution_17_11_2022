@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\ConsolePrompt.cs" />
+    <Compile Include="Helpers\CustomerManager.cs" />
     <Compile Include="Helpers\ProductManager.cs" />
     <Compile Include="Helpers\RandomGenerator.cs" />
     <Compile Include="Models\Customer.cs" />

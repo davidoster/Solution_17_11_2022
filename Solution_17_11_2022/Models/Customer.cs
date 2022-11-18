@@ -44,6 +44,15 @@ namespace Solution_16_11_2022.Models
             }
         }
 
+        public string LastName { get; set; }
+
+        public string Email { get; set; }
+
+        public string Mobile { get; set; }
+
+        public DateTime DateOfBirth { get; set; }
+
+        
         public Customer()
         {           
             Id = -1; // 2nd
@@ -54,20 +63,37 @@ namespace Solution_16_11_2022.Models
             Id = id; // 3rd
         }
 
-        public override string ToString()
+        public Customer(int id, string firstName, string lastName)
         {
-            return $"Id: {Id}, FirstName: {FirstName}, _firstname: {_firstname}";
+            Id = id + 1000;
+            FirstName = firstName.ToUpper();
+            LastName = lastName.ToUpper();
         }
 
-        //private void ChangeId(int id)
-        //{
-        //    if(id <= 0)
-        //    {
-        //        Id = 1;
-        //    } else
-        //    {
-        //        Id = id + 5000;
-        //    }
-        //}
+        // overloaded ctor which does null validations
+        public Customer(int id, string firstName, string lastName, 
+            string email, string mobile, DateTime dateOfBirth) : this(id, firstName, lastName)
+        {
+            //FirstName = firstName ?? "NO First Name"; // if (FirstName == null) Firstname = "NO First Name"; else FirstName = firstName;
+            //LastName = lastName ?? nameof(lastName); // "lastName";
+            Email = email ?? throw new Exception(nameof(email));
+            Mobile = mobile ?? throw new ArgumentNullException(nameof(mobile));
+            DateOfBirth = dateOfBirth;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }
