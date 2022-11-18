@@ -42,5 +42,15 @@ namespace Solution_16_11_2022.Helpers
             // Step 4. return the filled arrayOfProducts
             return arrayOfProducts;
         }
+
+        public static Product CreateProductWithRandomData()
+        {
+            return new Product(
+                RandomGenerator.GenerateInteger(1000), 
+                RandomGenerator.GenerateString(5),
+                RandomGenerator.GenerateString(20), 
+                RandomGenerator.GenerateDouble(1000), 
+                RandomGenerator.GenerateString(20));
+        }
     }
 }

@@ -19,20 +19,73 @@ namespace Solution_17_11_2022
             //CreateCustomers();
 
             // creates a new human object
-            Human human = new Human(0, "g", "p", "p@p", "6977", new DateTime(1,1,1));
-            Console.WriteLine(human);
+            Human human = new Human(0, "g", "p", "p@p", "6977", new DateTime(1, 1, 1));
+            //Console.WriteLine(human);
 
             // creates a new employee
-            Employee employee = new Employee(0, "G", "P", "p@p", "6977", 
-                new DateTime(1,1,1), 200);
+            Employee employee = new Employee(0, "G", "P", "p@p", "6977",
+                new DateTime(1, 1, 1), 200);
 
             // creates 40 employees
-            Employee[] employees = new Employee[1];
-            for(int i = 0; i < 1; i++)
+            //Employee[] employees = new Employee[40];
+            //for (int i = 0; i < 40; i++)
+            //{
+            //    employees[i] = new Employee();
+            //}
+            //Console.WriteLine(employees[0]);
+
+            // array initializer with brackets - bracket initializer
+            Customer[] customers = new Customer[3]
             {
-                employees[i] = new Employee();
+                new Customer(),  // customers[0]
+                new Customer(),  // customers[1]
+                new Customer()   // customers[2]
+            };
+
+            // store to a list a number of customers(4), then ask the user to add 3 more customers
+            List<Customer> listOfCustomers = new List<Customer>();
+            Customer c = new Customer(100, "fname", "lname", "email", "6999", new DateTime(1,1,1));
+            for(int i = 0; i < 20; i++)
+            {
+                listOfCustomers.Add(new Customer());
             }
-            Console.WriteLine(employees[0]);
+            listOfCustomers.Add(c); // index == 20
+            //Console.WriteLine(listOfCustomers.Count);
+            //Console.WriteLine(listOfCustomers[listOfCustomers.Count - 1]);
+            //Console.WriteLine(listOfCustomers.Capacity);
+            //listOfCustomers.Remove(listOfCustomers[4]);
+            //Console.WriteLine(listOfCustomers.Count);
+            //Console.WriteLine(listOfCustomers.Capacity);
+
+
+            // 1. create 3 products with random data
+            // 2. store the 3 products to a list
+            // 3. the product at index 1 must have Id = 200
+            // 4. do a for loop and find the product with Id 200 and remove it from this index
+            
+            // 1
+            List<Product> products = new List<Product>();
+            // 2
+            for(int i = 0; i < 3; i++)
+            {
+                products.Add(ProductManager.CreateProductWithRandomData());
+            }
+            // 3
+            products[1].Id = 200; 
+            // 4 - Searching product Id == 200
+            //for(int i = 0; i < products.Count; i++)
+            //{
+            //    if (products[i].Id == 200) 
+            //    {
+            //        Console.WriteLine($"The product with Id = 200 was found at {i}");
+            //        products.RemoveAt(i);
+            //        break;
+            //    }
+            //}
+
+            // 4. Alternative way to search
+            products.Remove(products.Find(product => product.Id == 200));
+            Console.WriteLine(products[1]);
 
             Console.WriteLine("Press any key to continue....");
             Console.ReadKey();
@@ -69,7 +122,7 @@ namespace Solution_17_11_2022
     {
         public int Id;
 
-        
+
         public SomeStruct(int id)
         {
             Id = id + 5;
