@@ -12,7 +12,7 @@ namespace Solution_17_11_2022.Models
         // multiple inheritance interfaces
     {
         public double Salary { get; set; }
-        public Employee() //: base()
+        public Employee()
         {
             Email += " some more";
         }
