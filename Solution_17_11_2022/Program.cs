@@ -1,8 +1,10 @@
 ﻿using Solution_16_11_2022.Helpers;
 using Solution_16_11_2022.Models;
+using Solution_17_11_2022.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,7 +15,17 @@ namespace Solution_17_11_2022
         static void Main(string[] args)
         {
             //CreateSomeProducts();
-           
+            Customer[] customers2021 = CustomerManager.CreateCustomersArrayFromUI(); // customers 2021
+            Customer[] customers2022 = CustomerManager.CreateCustomersArrayFromUI(); // customers 2022
+
+            CustomerManager customerManager2021 = new CustomerManager(customers2021);
+            customerManager2021.PrintCustomersArray();
+
+            CustomerManager customerManager2022 = new CustomerManager(customers2022);
+            customerManager2022.PrintCustomersArray();
+            
+            Console.WriteLine(customerManager2022.ArrayOfCustomers[0]);
+
             Console.WriteLine("Press any key to continue....");
             Console.ReadKey();
         }

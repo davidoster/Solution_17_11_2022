@@ -83,7 +83,7 @@ namespace Solution_16_11_2022.Models
 
         public override string ToString()
         {
-            return base.ToString();
+            return $"Id: {Id}\tFirstName: {FirstName}\tLastName: {LastName}\tEmail: {Email}\tMobile: {Mobile}\tDateOfBirth: {DateOfBirth}";
         }
 
         public override bool Equals(object obj)
