@@ -48,6 +48,8 @@
     <Compile Include="Helpers\ProductManager.cs" />
     <Compile Include="Helpers\RandomGenerator.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Human.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Program.cs" />
