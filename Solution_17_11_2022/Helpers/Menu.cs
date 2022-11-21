@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Solution_16_11_2022.Models;
+using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,9 +7,9 @@ using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleMenu
+namespace Solution_17_11_2022.Helpers
 {
-    public class Menu
+    internal class Menu
     {
         public string[] Options { get; set; } = new string[]
         {
@@ -67,7 +68,7 @@ namespace ConsoleMenu
             }
         }
 
-        public Menu(string[] options)
+        public Menu(string[] options, List<Customer> customers)
         {
             Options = options;
             bool stop = false;
@@ -87,8 +88,8 @@ namespace ConsoleMenu
                         break;
                     case ConsoleKey.D2:
                         Console.WriteLine("\nCreate Customer");
-                        //Customer customer = CustomerManager.CreateCustomerFromUI();
-                        //listOCustomers.Add(customer);
+                        Customer customer = CustomerManager.CreateCustomerFromUI();
+                        customers.Add(customer);
                         Console.WriteLine("Press any key...");
                         Console.ReadKey();
                         break;
@@ -99,6 +100,7 @@ namespace ConsoleMenu
                         break;
                     case ConsoleKey.D4:
                         Console.WriteLine("\nView Customer");
+                        Console.WriteLine(customers[0]);
                         Console.WriteLine("Press any key...");
                         Console.ReadKey();
                         break;
