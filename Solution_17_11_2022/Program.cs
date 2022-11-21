@@ -14,43 +14,6 @@ namespace Solution_17_11_2022
             // => lambda expression
             // Action
 
-            var subMenu = new ConsoleMenu(args, level: 1)
-                .Add("Sub_One", () => Console.WriteLine("Sub_One"))
-                .Add("Sub_Two", () => Console.WriteLine("Sub_Two"))
-                .Add("Sub_Three", () => Console.WriteLine("Sub_Three"))
-                .Add("Sub_Four", () => Console.WriteLine("Sub_Four"))
-                .Add("Sub_Close", ConsoleMenu.Close)
-                .Configure(config =>
-                {
-                    config.Selector = "--> ";
-                    config.EnableFilter = true;
-                    config.Title = "Submenu";
-                    config.EnableBreadcrumb = true;
-                    config.WriteBreadcrumbAction = titles => Console.WriteLine(string.Join(" / ", titles));
-                });
-
-            var menu = new ConsoleMenu(args, level: 0)
-              .Add("One", () => Console.WriteLine("One"))
-              .Add("Two", () => Console.WriteLine("Two"))
-              .Add("Three", () => Console.WriteLine("Three"))
-              .Add("Sub", subMenu.Show)
-              .Add("Change me", (thisMenu) => thisMenu.CurrentItem.Name = "I am changed!")
-              .Add("Close", ConsoleMenu.Close)
-              .Add("Action then Close", (thisMenu) => { Console.WriteLine("Close"); thisMenu.CloseMenu(); })
-              .Add("Exit", () => Environment.Exit(0))
-              .Configure(config =>
-              {
-                  config.Selector = "--> ";
-                  config.EnableFilter = true;
-                  config.Title = "Main menu";
-                  config.EnableWriteTitle = true;
-                  config.EnableBreadcrumb = true;
-              });
-
-            menu.Show();
-
-
-
             //ConsoleMenu.Menu menu1 = new ConsoleMenu.Menu();
 
             //CreateSomeProducts();
@@ -81,7 +44,7 @@ namespace Solution_17_11_2022
             //};
 
             // store to a list a number of customers(4), then ask the user to add 3 more customers
-            List<Customer> listOfCustomers = new List<Customer>();
+            //List<Customer> listOfCustomers = new List<Customer>();
             //Customer c = new Customer(100, "fname", "lname", "email", "6999", new DateTime(1,1,1));
             //for(int i = 0; i < 20; i++)
             //{
@@ -135,8 +98,18 @@ namespace Solution_17_11_2022
             //};
             //Menu menu = new Menu(options, listOfCustomers);
 
-            //Console.WriteLine("Press any key to continue....");
-            //Console.ReadKey();
+            Customer customer = new Customer(1,"George", "Paspa", "paspa@paspa", "6977", DateTime.Now);
+            List<Product> products = new List<Product>()
+            {
+                ProductManager.CreateProductWithRandomData()
+            };
+            products.Add(ProductManager.CreateProductWithRandomData());
+            products.Add(ProductManager.CreateProductWithRandomData());
+            Order order = new Order(1, "sdsfsdf", DateTime.Now, customer, products);
+            Console.WriteLine(order);
+
+            Console.WriteLine("Press any key to continue....");
+            Console.ReadKey();
 
         }
 
